@@ -1,4 +1,5 @@
 import "./Card.css"
+
 interface CardProps {
     imgSrc: string,
     commonName: string,

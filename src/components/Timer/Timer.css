@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.timerText {
+  font-size: 1.4em;
+  margin: 0;
+  color: #d31b65;
+  font-family: "Poppins";
+}
+
+#timer {
+  font-size: 2em;
+  margin: 0;
+  color: #d31b65;
+  font-family: "Roboto";
+}
