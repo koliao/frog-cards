@@ -2,18 +2,30 @@ import { useState } from 'react'
 import './App.css'
 import Card from './components/Card'
 import Timer from './components/Timer/Timer'
+import Button from './components/Button/Button'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [seconds, setSeconds] = useState(60*60 - 1);
+  const [seconds, setSeconds] = useState(10);
 
-  setTimeout(() => setSeconds(seconds - 1), 1000);
+  const claimCards = () => {
+    setSeconds(10);
+  }
+
+  if(seconds > 0) setTimeout(() => setSeconds(seconds - 1), 1000);
 
   return (
     <div className="mainContainer">
-      <Timer
-        secondsLeft={seconds}
-      />
+      {seconds > 0 ? (
+        <Timer
+          secondsLeft={seconds}
+        />
+      ) : (
+        <Button
+          label="Claim cards"
+          onClick={claimCards}
+        />
+      )}
       <div className="card">
         <Card
           commonName="Dessert rain frog"
