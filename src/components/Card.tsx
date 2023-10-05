@@ -1,6 +1,6 @@
 import "./Card.css"
 
-interface CardProps {
+export interface CardProps {
     imgSrc: string,
     commonName: string,
     scientificName: string,
