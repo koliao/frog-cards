@@ -1,6 +1,12 @@
 # TODO
 
-- [ ] Basic card design
-
-- [ ] think about frog data and how to download it, have it saved locally?
-- [ ] Fetch from some service?
+- [X] Create local frog database
+- [ ] Rare frog database (characters)
+- [ ] Add cards
+- [ ] persists
+- [ ] load from persist
+- [ ] add rare
+- [ ] add shiny
+- [ ] add newCardNotification
+- [ ] add expanded card view
+- [ ] add frog of the week podcast thing

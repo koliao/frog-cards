@@ -1,15 +1,22 @@
 import { useState } from 'react'
 import './App.css'
-import Card from './components/Card'
+import Card, { CardProps } from './components/Card'
 import Timer from './components/Timer/Timer'
 import Button from './components/Button/Button'
+import CardList from './components/CardList/CardList'
+import frogs from "./frogs"
 
 function App() {
   const [count, setCount] = useState(0)
   const [seconds, setSeconds] = useState(10);
+  const [cards, setCards] = useState<CardProps[]>([]);
 
   const claimCards = () => {
     setSeconds(10);
+    const frogKeys = Object.keys(frogs)
+    const index = Math.floor(Math.random() * frogKeys.length);
+    const newCard = frogs[frogKeys[index]];
+    setCards([...cards, newCard])
   }
 
   if(seconds > 0) setTimeout(() => setSeconds(seconds - 1), 1000);
@@ -26,6 +33,9 @@ function App() {
           onClick={claimCards}
         />
       )}
+      <CardList
+        cards={cards}
+      />
       <div className="card">
         <Card
           commonName="Dessert rain frog"
